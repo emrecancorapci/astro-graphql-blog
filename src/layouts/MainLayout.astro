@@ -1,0 +1,37 @@
+---
+import Header from "./Header.astro";
+
+interface Props {
+  meta: {
+    title: string;
+    description?: string;
+    keywords?: string;
+    author?: string;
+  };
+}
+
+const { meta } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={meta.description} />
+    <meta name="keywords" content={meta.keywords} />
+    <meta name="author" content={meta.author ?? "Emre Can Çorapçı"} />
+    <title>{meta.title}</title>
+  </head>
+  <body
+    class="flex bg-zinc-200 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-200 h-[3000px] justify-center w-full p-4"
+  >
+    <div class="flex flex-col max-w-screen-2xl w-full items-center">
+      <Header />
+      <main class="flex flex-col w-full justify-center">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

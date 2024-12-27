@@ -1,0 +1,20 @@
+---
+import NavLink from "../components/nav-link.astro";
+---
+
+<header class="flex sticky top-4 w-full justify-center pb-12">
+  <div
+    class="flex z-50 w-full border border-1 justify-between border-zinc-300 dark:border-zinc-800 rounded-full py-8 backdrop-blur bg-zinc-100/50 dark:bg-zinc-800/50 px-16"
+  >
+    <div class="flex">
+      <h1 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100">
+        EMRE CAN ÇORAPÇI
+      </h1>
+    </div>
+    <nav class="grid grid-cols-3 gap-4">
+      <NavLink href="/">HOME</NavLink>
+      <NavLink href="/blog">BLOG</NavLink>
+      <NavLink href="/projects">PROJECTS</NavLink>
+      </nav>
+  </div>
+</header>
