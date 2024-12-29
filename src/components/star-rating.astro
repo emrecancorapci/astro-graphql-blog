@@ -8,7 +8,7 @@ const { rating } = Astro.props;
 
 <div class="flex">
   {
-    Array.from({ length: Math.floor(rating) }).map((_) => (
+    Array.from({ length: Math.floor(rating) }).map(() => (
       <i class="text-yellow-500" data-lucide="star" />
     ))
   }

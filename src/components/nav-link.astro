@@ -6,6 +6,9 @@ interface Props {
 const { href } = Astro.props;
 ---
 
-<a class=`text-center text-md font-bold transition-all ${Astro.url.pathname === href ? "text-primary": "text-card-foreground hover:text-primary"}` href={href}>
+<a
+  class={`text-center text-base font-bold transition-all ${Astro.url.pathname === href ? "text-primary" : "text-card-foreground hover:text-primary"}`}
+  href={href}
+>
   <slot />
 </a>
