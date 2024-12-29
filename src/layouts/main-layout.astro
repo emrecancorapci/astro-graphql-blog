@@ -1,6 +1,6 @@
 ---
-import Header from "./Header.astro";
-import "../style/globals.css"
+import Header from "./header.astro";
+import "../style/globals.css";
 
 interface Props {
   meta: {
@@ -26,14 +26,14 @@ const { meta } = Astro.props;
     <title>{meta.title}</title>
   </head>
   <body
-    class="flex bg-zinc-200 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-200 h-[3000px] justify-center w-full p-4"
+    class="dark flex transition-all w-full justify-center bg-background p-4 text-zinc-900 dark:text-zinc-200"
   >
-    <div class="flex flex-col max-w-screen-2xl w-full items-center">
+    <div class="flex w-full max-w-screen-2xl flex-col items-center">
       <Header />
-      <main class="flex flex-col w-full justify-center">
+      <main class="flex w-full flex-col justify-center px-6">
         <slot />
       </main>
     </div>
   </body>
-  <script src="../lib/lucide.ts" />
+  <script src="../lib/lucide.ts"></script>
 </html>
