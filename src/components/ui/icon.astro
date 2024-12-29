@@ -1,0 +1,12 @@
+---
+interface Props {
+  icon: "sun" | "moon" | "chevon-right" | "star" | "star-half";
+  class: string;
+}
+
+// https://lucide.dev/icons/
+
+const { icon, class: className } = Astro.props;
+---
+
+<i class={className} data-lucide={icon}></i>

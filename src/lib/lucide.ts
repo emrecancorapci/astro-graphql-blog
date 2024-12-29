@@ -1,8 +1,11 @@
-import { createIcons, Sun, Moon } from 'lucide';
+import { createIcons, Sun, Moon, ChevronRight, Star, StarHalf } from 'lucide';
 
 createIcons({
   icons: {
     Sun,
-    Moon
+    Moon,
+    ChevronRight,
+    Star,
+    StarHalf,
   },
 });

@@ -1,11 +1,12 @@
 ---
 import Button from "./ui/button.astro";
+import Icon from "./ui/icon.astro";
 ---
 
 <theme-changer>
-  <Button>
-    <i class="dark:flex hidden transition-all" data-lucide="sun"></i>
-    <i class="dark:hidden flex transition-all" data-lucide="moon"></i>
+  <Button class="rounded-full px-3" variant="ghost">
+    <Icon class="dark:flex hidden transition-all" icon="sun" />
+    <Icon class="dark:hidden flex transition-all" icon="moon" />
   </Button>
 </theme-changer>
 
