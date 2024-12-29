@@ -1,30 +1,39 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import globals from "globals";
-import pluginJs from "@eslint/js";
+import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
 import eslintPluginAstro from "eslint-plugin-astro";
 import eslintPluginTailwindCSS from "eslint-plugin-tailwindcss";
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-	{ files: ["**/*.{js,mjs,cjs,ts,astro}"] },
-	{ ignores: ["node_modules", "dist"] },
-	{ languageOptions: { globals: globals.browser } },
-	pluginJs.configs.recommended,
-	...tseslint.configs.recommendedTypeChecked,
-	...eslintPluginAstro.configs.recommended,
-	...eslintPluginTailwindCSS.configs["flat/recommended"],
+export default tseslint.config(
 	{
+		ignores: ['**/dist', '**/node_modules', '**/.astro', '**/.github', '**/.changeset'],
+	},
+
+	// JavaScript
+	eslint.configs.recommended,
+	// TypeScript Type Checked
+	...tseslint.configs.recommendedTypeChecked,
+	{
+    languageOptions: {
+      parserOptions: {
+        project: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+
+	// Astro
+	...eslintPluginAstro.configs.recommended,
+
+	// Set globals for Node scripts.
+	{
+		files: ['scripts/**'],
 		languageOptions: {
-			parserOptions: {
-				project: true,
-				// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-				tsconfigRootDir: import.meta.dirname,
-			},
+			globals: globals.node,
 		},
 	},
-	{
-		rules: {
-			"@typescript-eslint/no-unsafe-return": "off",
-		}
-	}
-];
+
+	// Tailwind CSS - This plugin hates the other plugins so it is disabled.
+	...eslintPluginTailwindCSS.configs["flat/recommended"],
+);
