@@ -1,0 +1,21 @@
+---
+import Icon from "@/components/ui/icon.astro";
+import type { IconName } from "@/lib/lucide";
+
+interface Props {
+  icon: IconName;
+  title: string;
+}
+
+const { icon, title } = Astro.props;
+---
+
+<div class="grid grid-cols-8">
+  <Icon class="mt-1 text-primary" icon={icon} />
+  <div class="col-span-7 grid gap-1">
+    <h3 class="text-pretty text-lg font-bold">{title}</h3>
+    <p class="text-muted-foreground">
+      <slot />
+    </p>
+  </div>
+</div>

@@ -1,16 +1,22 @@
 ---
+import MainLayout from "../layouts/main-layout.astro";
+import Enterance from "./_index/enterance.astro";
+import Second from "./_index/second.astro";
+import Third from "./_index/third.astro";
 
+const meta = {
+  title: "Home - Emre Can Çorapçı",
+  description: "Build faster websites with less client-side Javascript",
+  keywords:
+    "astro, svelte, react, vue, static site generator, ssr, server side rendering, jamstack",
+  author: "Emre Can Çorapçı",
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout meta={meta}>
+  <div class="grid gap-8 py-4">
+    <Enterance />
+    <Second />
+    <Third />
+  </div>
+</MainLayout>
