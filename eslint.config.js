@@ -34,6 +34,6 @@ export default tseslint.config(
 		},
 	},
 
-	// Tailwind CSS - This plugin hates the other plugins so it is disabled.
+	// Tailwind CSS
 	...eslintPluginTailwindCSS.configs["flat/recommended"],
 );

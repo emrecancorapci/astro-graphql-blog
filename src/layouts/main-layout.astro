@@ -26,9 +26,9 @@ const { meta } = Astro.props;
     <title>{meta.title}</title>
   </head>
   <body
-    class="dark flex w-full justify-center bg-background p-4 text-zinc-900 transition-all dark:text-zinc-200"
+    class="dark flex w-full justify-center bg-card p-4 text-zinc-900 transition-all dark:text-zinc-200"
   >
-    <div class="flex w-full max-w-screen-2xl flex-col items-center">
+    <div class="flex w-full max-w-screen-2xl flex-col items-center px-4">
       <Header />
       <main class="flex w-full flex-col justify-center px-6">
         <slot />
