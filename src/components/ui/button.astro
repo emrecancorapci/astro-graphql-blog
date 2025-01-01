@@ -1,11 +1,11 @@
 ---
-import { cva, type VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
+import type { HTMLAttributes } from "astro/types";
 
-interface Props {
-  class?: string;
-  variant?: keyof typeof variants["variant"],
-  size?: keyof typeof variants["size"]
+interface Props extends HTMLAttributes<"button"> {
+  variant?: keyof (typeof variants)["variant"];
+  size?: keyof (typeof variants)["size"];
 }
 
 const variants = {
@@ -29,7 +29,9 @@ const variants = {
 };
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  `inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium
+  transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring
+  disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0`,
   {
     variants,
     defaultVariants: {
@@ -39,9 +41,9 @@ const buttonVariants = cva(
   },
 );
 
-const { variant, size, class: className } = Astro.props;
+const { variant, size, class: className, ...props } = Astro.props;
 ---
 
-<button class={cn(buttonVariants({ variant, size, className }))}>
+<button class={cn(buttonVariants({ variant, size, className }))} {...props}>
   <slot />
 </button>

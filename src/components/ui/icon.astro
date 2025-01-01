@@ -1,12 +1,12 @@
 ---
 import type { IconName } from '@/lib/lucide';
+import type { HTMLAttributes } from 'astro/types';
 
-interface Props {
+interface Props extends HTMLAttributes<"i"> {
   icon: IconName;
-  class?: string;
 }
 
-const { icon, class: className } = Astro.props;
+const { icon, ...props } = Astro.props;
 ---
 
-<i class={className} data-lucide={icon}></i>
+<i data-lucide={icon} {...props}></i>

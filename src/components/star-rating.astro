@@ -1,16 +1,21 @@
 ---
+import type { IconName } from '@/lib/lucide';
+import Icon from './ui/icon.astro';
+
 interface Props {
   rating: number;
+  fullStar?: IconName;
+  halfStar?: IconName;
 }
 
-const { rating } = Astro.props;
+const { rating, fullStar, halfStar } = Astro.props;
 ---
 
 <div class="flex">
   {
     Array.from({ length: Math.floor(rating) }).map(
-      () => (<i class="text-yellow-500" data-lucide="star" />) as HTMLElement,
+      () => (<Icon class="text-yellow-500" icon={fullStar ?? "star"} />),
     )
   }
-  {rating % 1 >= 0.5 && <i class="text-yellow-500" data-lucide="star-half" />}
+  {rating % 1 >= 0.5 && <Icon class="text-yellow-500" icon={halfStar ?? "star-half"}/>}
 </div>
