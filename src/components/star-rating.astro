@@ -8,9 +8,9 @@ const { rating } = Astro.props;
 
 <div class="flex">
   {
-    Array.from({ length: Math.floor(rating) }).map(() => (
-      <i class="text-yellow-500" data-lucide="star" />
-    ))
+    Array.from({ length: Math.floor(rating) }).map(
+      () => (<i class="text-yellow-500" data-lucide="star" />) as HTMLElement,
+    )
   }
   {rating % 1 >= 0.5 && <i class="text-yellow-500" data-lucide="star-half" />}
 </div>

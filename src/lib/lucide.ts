@@ -1,6 +1,34 @@
-import { createIcons, Sun, Moon, ChevronRight, Star, StarHalf, UsersRound, BadgeCheck, ScrollText, SquareUserRound } from 'lucide';
+import {
+  createIcons,
+  Sun,
+  Moon,
+  ChevronRight,
+  Star,
+  StarHalf,
+  UsersRound,
+  BadgeCheck,
+  ScrollText,
+  SquareUserRound,
+  PencilRuler,
+  LayoutDashboard,
+  Castle,
+} from "lucide";
 
-export type IconName = "sun" | "moon" | "chevron-right" | "star" | "star-half" | "users-round" | "badge-check" | "scroll-text" | "square-user-round";
+// https://lucide.dev/icons/
+
+export type IconName =
+  | "sun"
+  | "moon"
+  | "chevron-right"
+  | "star"
+  | "star-half"
+  | "users-round"
+  | "badge-check"
+  | "scroll-text"
+  | "square-user-round"
+  | "pencil-ruler"
+  | "layout-dashboard"
+  | "castle";
 
 createIcons({
   icons: {
@@ -12,6 +40,9 @@ createIcons({
     UsersRound,
     BadgeCheck,
     ScrollText,
-    SquareUserRound
+    SquareUserRound,
+    PencilRuler,
+    LayoutDashboard,
+    Castle,
   },
 });
