@@ -26,5 +26,10 @@
     "linter": {
       "enabled": true
     }
-  }
+  },
+  "overrides": [
+    {
+      "include": ["*.astro"]
+    }
+  ]
 }

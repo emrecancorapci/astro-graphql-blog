@@ -23,9 +23,6 @@ export default tseslint.config(
     },
   },
 
-	// Astro
-	...eslintPluginAstro.configs.recommended,
-
 	// Set globals for Node scripts.
 	{
 		files: ['scripts/**'],
@@ -36,4 +33,8 @@ export default tseslint.config(
 
 	// Tailwind CSS
 	...eslintPluginTailwindCSS.configs["flat/recommended"],
+
+
+	// Astro
+	...eslintPluginAstro.configs.recommended,
 );
