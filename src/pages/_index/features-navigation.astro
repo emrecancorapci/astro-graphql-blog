@@ -1,5 +1,5 @@
 ---
-import FourthCard from "./fourth/fourth-card.astro";
+import Navigation from "./features-nav/navigation-card.astro";
 ---
 
 <div class="mt-8 grid gap-12 rounded-2xl bg-secondary p-16">
@@ -8,26 +8,26 @@ import FourthCard from "./fourth/fourth-card.astro";
     construction needs.
   </h2>
   <card-selector class="grid gap-4">
-    <FourthCard key="fc-1" icon="pencil-ruler" title="Cutting-Edge Tools">
+    <Navigation key="fc-1" icon="pencil-ruler" title="Cutting-Edge Tools">
       Empower your projects with ScrewFast's cutting-edge tools. Experience
       enhanced efficiency in construction management with our sophisticated
       automated solutions.
-    </FourthCard>
-    <FourthCard key="fc-2" icon="layout-dashboard" title="Intuitive Dashboards">
+    </Navigation>
+    <Navigation key="fc-2" icon="layout-dashboard" title="Intuitive Dashboards">
       Navigate with ease using ScrewFast's intuitive dashboards. Set up and
       oversee your projects seamlessly, with user-friendly interfaces designed
       for quick and effective workflow management.
-    </FourthCard>
-    <FourthCard key="fc-3" icon="castle" title="Robust Features">
+    </Navigation>
+    <Navigation key="fc-3" icon="castle" title="Robust Features">
       Minimize complexity, maximize productivity. ScrewFast's robust features
       are engineered to streamline your construction process, delivering results
       that stand out for their excellence.
-    </FourthCard>
+    </Navigation>
   </card-selector>
 </div>
 
 <script>
-  class CardSelector extends HTMLElement {
+  class NavigationCardSelector extends HTMLElement {
     connectedCallback() {
       const cards = this.querySelectorAll(`div[id="fcard"]`);
 
@@ -52,5 +52,5 @@ import FourthCard from "./fourth/fourth-card.astro";
       });
     }
   }
-  customElements.define("card-selector", CardSelector);
+  customElements.define("card-selector", NavigationCardSelector);
 </script>

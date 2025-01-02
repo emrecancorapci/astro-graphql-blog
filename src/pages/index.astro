@@ -1,8 +1,12 @@
 ---
-import MainLayout from "../layouts/main-layout.astro";
-import Enterance from "./_index/enterance.astro";
-import Second from "./_index/second.astro";
-import Third from "./_index/third.astro";
+import MainLayout from "@/layouts/main-layout.astro";
+import Button from "@/components/ui/button.astro";
+import Icon from "@/components/ui/icon.astro";
+
+import HeroSection from "./_index/hero-section.astro";
+import FeaturesNavigation from "./_index/features-navigation.astro";
+import ClientsSection from "./_index/clients-section.astro";
+import FeatureSection from "./_index/features-section.astro";
 
 const meta = {
   title: "Home - Emre Can Çorapçı",
@@ -15,8 +19,33 @@ const meta = {
 
 <MainLayout meta={meta}>
   <div class="grid gap-8 py-4">
-    <Enterance />
-    <Second />
-    <Third />
+    <HeroSection 
+      subTitle="Astro is a new kind of static site generator that delivers lightning-fast performance with a modern developer experience."
+      rating={4.8}
+      reviews="12.8k">
+      <h1 class="text-4xl font-bold text-card-foreground xl:text-6xl" slot="title">
+        Welcome to Astro
+      </h1>
+      <p class="text-lg leading-7 text-card-foreground" slot="sub-title">
+        Astro is a new kind of static site generator that delivers
+        lightning-fast performance with a modern developer experience.
+      </p>
+      <div class="grid grid-cols-2 gap-4" slot="button-section">
+        <Button class="group justify-center text-base">
+          Start Exploring
+          <Icon
+          class="transition-all duration-300 group-hover:translate-x-2"
+          icon="chevron-right"
+          />
+        </Button>
+        <Button class="text-base">Contact Sales Team</Button>
+      </div>
+      <div class="bg-primary" slot="right-section"></div>
+    </HeroSection>
+    <ClientsSection
+      title="Trusted by Industry Leaders"
+      subTitle="Experience the reliability chosen by industry giants." />
+    <FeatureSection />
+    <FeaturesNavigation />
   </div>
 </MainLayout>
