@@ -4,10 +4,15 @@
     "strictNullChecks": true,
     "allowJs": true,
     "baseUrl": ".",
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      },
+    ],
     "paths": {
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*", "esling.config.js"],
-  "exclude": ["dist/"]
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"]
 }
