@@ -1,7 +1,16 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "strictNullChecks": true,
+    // Type Checking
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride":true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
     "allowJs": true,
     "baseUrl": ".",
     "plugins": [
