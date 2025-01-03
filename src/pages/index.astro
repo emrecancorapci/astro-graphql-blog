@@ -19,11 +19,15 @@ const meta = {
 
 <MainLayout meta={meta}>
   <div class="grid gap-8 py-4">
-    <HeroSection 
+    <HeroSection
       subTitle="Astro is a new kind of static site generator that delivers lightning-fast performance with a modern developer experience."
       rating={4.8}
-      reviews="12.8k">
-      <h1 class="text-4xl font-bold text-card-foreground xl:text-6xl" slot="title">
+      reviews="12.8k"
+    >
+      <h1
+        class="text-4xl font-bold text-card-foreground xl:text-6xl"
+        slot="title"
+      >
         Welcome to Astro
       </h1>
       <p class="text-lg leading-7 text-card-foreground" slot="sub-title">
@@ -34,8 +38,8 @@ const meta = {
         <Button class="group justify-center text-base">
           Start Exploring
           <Icon
-          class="transition-all duration-300 group-hover:translate-x-2"
-          icon="chevron-right"
+            class="transition-all duration-300 group-hover:translate-x-2"
+            icon="chevron-right"
           />
         </Button>
         <Button class="text-base">Contact Sales Team</Button>
@@ -44,8 +48,37 @@ const meta = {
     </HeroSection>
     <ClientsSection
       title="Trusted by Industry Leaders"
-      subTitle="Experience the reliability chosen by industry giants." />
+      subTitle="Experience the reliability chosen by industry giants."
+    />
     <FeatureSection />
-    <FeaturesNavigation />
+    <FeaturesNavigation
+      title="Customize ScrewFast's offerings to perfectly suit your hardware and construction needs."
+      cards={[
+        {
+          id: 1,
+          icon: "pencil-ruler",
+          title: "Cutting-Edge Tools",
+          subTitle: `Empower your projects with ScrewFast's cutting-edge tools. Experience
+        enhanced efficiency in construction management with our sophisticated
+        automated solutions.`,
+        },
+        {
+          id: 2,
+          icon: "layout-dashboard",
+          title: "Intuitive Dashboards",
+          subTitle: `Navigate with ease using ScrewFast's intuitive dashboards. Set up and
+            oversee your projects seamlessly, with user-friendly interfaces designed
+            for quick and effective workflow management.`,
+        },
+        {
+          id: 3,
+          icon: "castle",
+          title: "Robust Features",
+          subTitle: `Minimize complexity, maximize productivity. ScrewFast's robust features 
+            are engineered to streamline your construction process, delivering results
+            that stand out for their excellence.`,
+        },
+      ]}
+    />
   </div>
 </MainLayout>
