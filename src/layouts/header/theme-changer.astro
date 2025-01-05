@@ -4,7 +4,10 @@ import Icon from "@/components/ui/icon.astro";
 ---
 
 <theme-changer>
-  <Button class="size-10 rounded-full p-0" variant="ghost">
+  <Button
+    class="size-10 rounded-full p-0 shadow-[inset_0_0_4px_2px] shadow-zinc-800/10 drop-shadow-[0_0_16px_rgba(0,0,0,0.05)] dark:shadow-zinc-900/20"
+    variant="ghost"
+  >
     <Icon class="hidden transition-all dark:flex" icon="sun" />
     <Icon class="flex transition-all dark:hidden" icon="moon" />
   </Button>
