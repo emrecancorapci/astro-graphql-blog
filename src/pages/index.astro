@@ -9,9 +9,17 @@ import ClientsSection from "./_index/clients-section.astro";
 import FeatureSection from "./_index/features-section.astro";
 import HeroTitle from "./_index/hero-section/hero-title.astro";
 import HeroSubtitle from "./_index/hero-section/hero-subtitle.astro";
+import Meta from "@/components/meta.astro";
 ---
 
-<MainLayout meta={meta}>
+<MainLayout>
+  <Meta
+    title="Home - Emre Can Çorapçı"
+    description="Build faster websites with less client-side Javascript"
+    keywords="astro, svelte, react, vue, static site generator, ssr, server side rendering, jamstack"
+    author="Emre Can Çorapçı"
+    slot="meta"
+  />
   <div class="grid gap-8 py-4">
     <HeroSection rating={4.8} reviews="12.8k">
       <HeroTitle slot="title">Equip Your Projects with ScrewFast</HeroTitle>
@@ -51,7 +59,7 @@ import HeroSubtitle from "./_index/hero-section/hero-subtitle.astro";
           title: "Simplicity and Affordability",
           subtitle: `Benefit from our committed teams who ensure your success is personal.
         Count on expert guidance and exceptional results throughout your project
-        journey.`
+        journey.`,
         },
         {
           id: 3,
@@ -59,14 +67,14 @@ import HeroSubtitle from "./_index/hero-section/hero-subtitle.astro";
           title: "Comprehensive Documentation",
           subtitle: `Integrate with ease using ScrewFast's exhaustive guides and libraries.
         Achieve seamless product adoption with our full suite of documentation
-        designed for your success.`
+        designed for your success.`,
         },
         {
           id: 4,
           icon: "square-user-round",
           title: "User-Centric Design",
           subtitle: `Experience the difference with ScrewFast's user-focused design — where
-        functionality meets practicality for an enhanced work experience.`
+        functionality meets practicality for an enhanced work experience.`,
         },
       ]}
     />

@@ -1,17 +1,6 @@
 ---
 import Header from "./header.astro";
 import "../style/globals.css";
-
-interface Props {
-  meta: {
-    title: string;
-    description?: string;
-    keywords?: string;
-    author?: string;
-  };
-}
-
-const { meta } = Astro.props;
 ---
 
 <html lang="en">
@@ -19,11 +8,7 @@ const { meta } = Astro.props;
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={meta.description} />
-    <meta name="keywords" content={meta.keywords} />
-    <meta name="author" content={meta.author ?? "Emre Can Çorapçı"} />
-    <title>{meta.title}</title>
+    <slot name="meta" />
   </head>
   <body
     class="dark flex w-full justify-center bg-card p-4 text-zinc-900 transition-all dark:text-zinc-200"

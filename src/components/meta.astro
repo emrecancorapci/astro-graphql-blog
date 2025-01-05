@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+  author?: string;
+}
+
+const { title, description, keywords, author } = Astro.props;
+---
+
+<meta name="generator" content={Astro.generator} />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="author" content={author ?? "Emre Can Çorapçı"} />
+<title>{title}</title>
