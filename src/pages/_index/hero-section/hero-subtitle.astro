@@ -1,0 +1,12 @@
+---
+import { cn } from "@/lib/utils";
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"p">;
+
+const { props } = Astro;
+---
+
+<p class={cn("text-lg leading-7 text-card-foreground", props.class)} {...props}>
+  <slot />
+</p>
