@@ -1,10 +1,24 @@
 ---
+import type { HTMLAttributes } from "astro/types";
 import FeatureCard from "./features/feature-card.astro";
+
+type FeatureCardParameters = Parameters<typeof FeatureCard>[0];
+
+interface FeatureCardType extends FeatureCardParameters {
+  id: number;
+  subtitle: string;
+}
+
+interface Props extends HTMLAttributes<"div"> {
+  cards: FeatureCardType[];
+}
+
+const { cards } = Astro.props;
 ---
 
 <div>
   <div class="grid grid-cols-1 gap-4 xl:grid-cols-3 xl:gap-8">
-    <div class="grid gap-4">
+    <div class="flex flex-col gap-4">
       <h2 class="text-3xl font-bold">Meeting Industry Demand</h2>
       <p>
         At ScrewFast, we tackle the unique challenges encountered in the
@@ -16,25 +30,15 @@ import FeatureCard from "./features/feature-card.astro";
     <div
       class="col-span-1 grid grid-cols-2 grid-rows-2 gap-10 p-4 xl:col-span-2 xl:p-0"
     >
-      <FeatureCard icon="users-round" title="Dedicated Teams">
-        Benefit from our committed teams who ensure your success is personal.
-        Count on expert guidance and exceptional results throughout your project
-        journey.
-      </FeatureCard>
-      <FeatureCard icon="badge-check" title="Dedicated Teams">
-        Find easy-to-use, affordable solutions with ScrewFast's line of tools
-        and equipment. Our products make procurement simple and keep projects
-        within budget.
-      </FeatureCard>
-      <FeatureCard icon="scroll-text" title="Dedicated Teams">
-        Integrate with ease using ScrewFast's exhaustive guides and libraries.
-        Achieve seamless product adoption with our full suite of documentation
-        designed for your success.
-      </FeatureCard>
-      <FeatureCard icon="square-user-round" title="Dedicated Teams">
-        Experience the difference with ScrewFast's user-focused design — where
-        functionality meets practicality for an enhanced work experience.
-      </FeatureCard>
+      {
+        cards
+          .sort((a, b) => b.id - a.id)
+          .map(({ icon, title, subtitle }) => (
+            <FeatureCard icon={icon} title={title}>
+              {subtitle}
+            </FeatureCard>
+          ))
+      }
     </div>
   </div>
 </div>
