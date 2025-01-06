@@ -3,7 +3,7 @@ import Header from "./header.astro";
 import "../style/globals.css";
 ---
 
-<html lang="en">
+<html class="bg-primary p-1 px-2" lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -11,7 +11,7 @@ import "../style/globals.css";
     <slot name="meta" />
   </head>
   <body
-    class="dark flex w-full justify-center bg-card p-4 text-zinc-900 transition-all dark:text-zinc-200"
+    class="dark flex w-full justify-center rounded-2xl bg-card p-4 text-zinc-900 transition-all dark:text-zinc-200"
   >
     <div class="grid w-full max-w-screen-2xl items-center px-4 xl:px-8">
       <Header />
